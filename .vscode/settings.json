@@ -1,6 +1,9 @@
 {
     "editor.detectIndentation": false, // vscode默认启用了根据文件类型自动设置tabsize的选项
     "editor.tabSize": 2, // 重新设定tabsize
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
     "editor.formatOnSave": true, // #每次保存的时候自动格式化
     // 在使用搜索功能时，将这些文件夹/文件排除在外
     "search.exclude": {
@@ -27,8 +30,6 @@
     },
     "typescript.preferences.importModuleSpecifier": "relative", // 使用相对路径
     "javascript.preferences.importModuleSpecifier": "relative", // 使用相对路径
-    "clang-format.executable": "/usr/bin/clang-format", //环境中需要安装 clang-format 软件
-    "clang-format.style": "google",
     "cSpell.words": [
       "Dengine",
       "Hmmss",
