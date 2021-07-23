@@ -4,13 +4,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TenThousandModule } from './ten-thousand/ten-thousand.module';
 import { ConfigModule, ConfigType } from '@nestjs/config';
-import {databaseConfig} from './config/database.config';
+import { databaseConfig } from './config/database.config';
+import { FiftyThousandModule } from './fifty-thousand/fifty-thousand.module';
+import { HundredThousandModule } from './hundred-thousand/hundred-thousand.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-	    isGlobal: true,
-	    load: [databaseConfig]
+      isGlobal: true,
+      load: [databaseConfig],
     }),
     TypeOrmModule.forRootAsync({
       useFactory: async (config: ConfigType<typeof databaseConfig>) => ({
@@ -23,9 +25,11 @@ import {databaseConfig} from './config/database.config';
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
       }),
-      inject: [databaseConfig.KEY]
+      inject: [databaseConfig.KEY],
     }),
     TenThousandModule,
+    FiftyThousandModule,
+    HundredThousandModule,
   ],
   controllers: [AppController],
   providers: [AppService],

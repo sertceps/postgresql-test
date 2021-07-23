@@ -11,16 +11,17 @@ export class TenThousandService {
     private readonly tenThousandEntityRepository: Repository<TenThousandEntity>
   ) {}
 
-  async findOneByUuid(uuid: string) {
+  async findOneByUuid(uuid: string): Promise<TenThousandEntity> {
     return this.tenThousandEntityRepository.findOne(uuid);
   }
 
-  async createOne(name: string, age?: number, gender?: Gender, description?: string) {
+  async createOne(name: string, age?: number, gender?: Gender, description?: string): Promise<TenThousandEntity> {
     const tenThousand = new TenThousandEntity();
     tenThousand.name = name;
     if (age) tenThousand.age = age;
     if (gender) tenThousand.gender = gender;
     if (description) tenThousand.description = description;
+
     return this.tenThousandEntityRepository.save(tenThousand);
   }
 }
