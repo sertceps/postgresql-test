@@ -15,6 +15,15 @@ export class HundredThousandEntity {
   @Column({ type: 'int', default: 0 })
   age: number;
 
+  @Column({ nullable: true })
+  school: string;
+
+  @Column({ nullable: true })
+  address: string;
+
+  @Column({ nullable: true })
+  city: string;
+
   @Column({ type: 'text', nullable: true })
   description: string;
 
