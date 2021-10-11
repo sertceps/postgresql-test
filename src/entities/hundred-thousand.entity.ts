@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { Gender } from '../common/constants/gender';
 
-@Entity()
+@Entity('hundred_thounds')
 export class HundredThousandEntity {
   @PrimaryGeneratedColumn('uuid')
   uuid: string;

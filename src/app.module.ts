@@ -2,10 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TenThousandModule } from './ten-thousand/ten-thousand.module';
 import { ConfigModule, ConfigType } from '@nestjs/config';
 import { databaseConfig } from './config/database.config';
-import { FiftyThousandModule } from './fifty-thousand/fifty-thousand.module';
 import { HundredThousandModule } from './hundred-thousand/hundred-thousand.module';
 
 @Module({
@@ -22,13 +20,14 @@ import { HundredThousandModule } from './hundred-thousand/hundred-thousand.modul
         username: config.user,
         password: config.pass,
         database: config.database,
+        // ssl: {
+        //   rejectUnauthorized: false,
+        // },
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
       }),
       inject: [databaseConfig.KEY],
     }),
-    TenThousandModule,
-    FiftyThousandModule,
     HundredThousandModule,
   ],
   controllers: [AppController],

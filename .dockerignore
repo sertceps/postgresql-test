@@ -1,0 +1,6 @@
+**/*
+!package.json
+!.yarnrc
+!yarn.lock
+
+!./dist/
