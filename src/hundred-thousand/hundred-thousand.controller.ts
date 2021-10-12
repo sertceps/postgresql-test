@@ -4,7 +4,7 @@ import { FindAndPagingReqDto } from '../common/dtos/find-and-paging.req.dto';
 import { UuidResDto } from '../common/dtos/uuid.res.dto';
 import { HundredThousandService } from './hundred-thousand.service';
 
-@Controller('hundred-thousand')
+@Controller()
 export class HundredThousandController {
   constructor(private readonly hundredThousandService: HundredThousandService) {}
 
