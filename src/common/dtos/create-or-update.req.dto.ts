@@ -18,4 +18,10 @@ export class CreateOrUpdateReqDto {
   @MaxLength(150, { message: '个人介绍长度超出限制' })
   @IsOptional()
   description?: string;
+
+  school: string;
+
+  city: string;
+
+  address: string;
 }
