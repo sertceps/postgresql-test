@@ -20,9 +20,9 @@ import { HundredThousandModule } from './hundred-thousand/hundred-thousand.modul
         username: config.user,
         password: config.pass,
         database: config.database,
-        // ssl: {
-        //   rejectUnauthorized: false,
-        // },
+        ssl: {
+          rejectUnauthorized: false,
+        },
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
       }),
